@@ -10,6 +10,17 @@ module.exports = {
   module:{
   	rules:[
   	//aqui van los loaders
+      {
+        // test: que tipo de archivo quiero reconocer
+        // use: que loader se va encargar del archivo
+        test: /.\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options:{
+            presets: ['@babel/preset-env']
+          }
+        },
+      },
   		{
   			// test: que tipo de archivo quiero reconocer
   			// use: que loader se va encargar del archivo
