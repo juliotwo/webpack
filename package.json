@@ -8,8 +8,9 @@
     "build": " webpack index.js --output bundle.js",
     "build:local": "webpack",
     "build:external": "webpack --config ./external/webpack.config.js",
-    "build:css": "webpack --config ./css-style-loader/webpack.config.js"
-
+    "build:css": "webpack --config ./css-style-loader/webpack.config.js",
+    "build:extract": "webpack --config ./plugin-extract-text/webpack.config.js",
+    "build:multi": "webpack --config ./entry-points/webpack.config.js"
   },
   "keywords": [
     "webpack"
@@ -18,6 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
