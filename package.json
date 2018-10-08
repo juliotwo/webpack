@@ -1,0 +1,25 @@
+{
+  "name": "curso-de-webpack",
+  "version": "1.0.0",
+  "description": "curso",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": " webpack index.js --output bundle.js",
+    "build:local": "webpack",
+    "build:external": "webpack --config ./external/webpack.config.js",
+    "build:css": "webpack --config ./css-style-loader/webpack.config.js"
+
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "julio",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
