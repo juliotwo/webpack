@@ -105,7 +105,19 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./ba
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _estilos_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./estilos.css */ \"./babel-loader/estilos.css\");\n/* harmony import */ var _estilos_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_estilos_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./message.js */ \"./babel-loader/message.js\");\n/* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_message_js__WEBPACK_IMPORTED_MODULE_1__);\n\n\ndocument.write(_message_js__WEBPACK_IMPORTED_MODULE_1__[\"firstMessage\"]); // document.write(\"Hola  Mundo Desde CSS\")\n\nconsole.log('Hola mundo del CSS ');\n\n//# sourceURL=webpack:///./babel-loader/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _estilos_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./estilos.css */ \"./babel-loader/estilos.css\");\n/* harmony import */ var _estilos_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_estilos_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./message.js */ \"./babel-loader/message.js\");\n\n\nconsole.log('Hola mundo del 1 ');\ndocument.write(_message_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].others);\nconsole.log('Hola mundo del 2 ');\n_message_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].delayedMessage(); // document.write(\"Hola  Mundo Desde CSS\")\n\nconsole.log('Hola mundo del 3 ');\n\n//# sourceURL=webpack:///./babel-loader/index.js?");
+
+/***/ }),
+
+/***/ "./babel-loader/make-message.js":
+/*!**************************************!*\
+  !*** ./babel-loader/make-message.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction makeMessage(msg) {\n  const element = document.createElement('p');\n  element.textContent = msg;\n  return element;\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (makeMessage);\n\n//# sourceURL=webpack:///./babel-loader/make-message.js?");
 
 /***/ }),
 
@@ -113,10 +125,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _est
 /*!*********************************!*\
   !*** ./babel-loader/message.js ***!
   \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("module.exports = {\n  firstMessage: 'Hola mundo desde un modulo'\n};\n\n//# sourceURL=webpack:///./babel-loader/message.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _render_to_dom_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./render-to-dom.js */ \"./babel-loader/render-to-dom.js\");\n/* harmony import */ var _make_message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./make-message */ \"./babel-loader/make-message.js\");\n\n\nconst waitTime = new Promise((resolve, reject) => {\n  setTimeout(() => {\n    resolve('Han pasado 3 segundos');\n    reject(new Error('Algo ha salido mal...'));\n  }, 3000);\n});\nconst messages = {\n  others: 'Hola a todos',\n  delayedMessage: async () => {\n    const message = await waitTime;\n    console.log(message);\n    Object(_render_to_dom_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(Object(_make_message__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(message));\n  }\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (messages); // export {delayedMessage}\n\n//# sourceURL=webpack:///./babel-loader/message.js?");
+
+/***/ }),
+
+/***/ "./babel-loader/render-to-dom.js":
+/*!***************************************!*\
+  !*** ./babel-loader/render-to-dom.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return renderToDom; });\nfunction renderToDom(element) {\n  document.body.append(element);\n}\n\n//# sourceURL=webpack:///./babel-loader/render-to-dom.js?");
 
 /***/ })
 

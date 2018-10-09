@@ -16,9 +16,6 @@ module.exports = {
         test: /.\.js$/,
         use: {
           loader: 'babel-loader',
-          options:{
-            presets: ['@babel/preset-env']
-          }
         },
       },
   		{
@@ -36,6 +33,8 @@ module.exports = {
   },
   plugins:[
     //aqui van los plugins
+
     new ExtractTextPlugin("css/[name].css")
   ]
+
 }
